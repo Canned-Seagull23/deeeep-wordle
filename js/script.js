@@ -28,4 +28,4 @@ const processInput = (key) => {
   keypressed.key = true;
   console.log(key);
 };
-document.addEventListener("keyup", processInput);
+document.addEventListener("keyup", processInput, false);
