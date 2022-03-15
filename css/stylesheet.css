@@ -8,6 +8,10 @@
 .flex-direction-column {
   flex-direction: column;
 }
+//Utility
+.text-align-center {
+  text-align: center;
+{
 //Wordle Display
 .wordleRow {
   clear: both;
