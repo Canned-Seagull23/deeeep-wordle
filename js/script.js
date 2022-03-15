@@ -24,7 +24,8 @@ const generateNewWord = () => {
 };
 //Detect Input
 var keypressed = {};
-const processInput = (key) => {
+const processInput = (keyPressed) => {
+  var key = keyPressed.key.toLowerCase();
   keypressed.key = true;
   console.log(key);
 };
