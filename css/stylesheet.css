@@ -1,6 +1,11 @@
+//Flexible Box
 .flex-container {
   display: flex;
 }
+.justify-content-center {
+  justify-content: center;
+}
+//Wordle Display
 .wordleRow {
   clear: both;
 }
