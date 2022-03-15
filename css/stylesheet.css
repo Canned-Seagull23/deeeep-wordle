@@ -11,7 +11,11 @@
 //Utility
 .text-align-center {
   text-align: center;
-{
+}
+//Heading
+.font-sans-serif {
+  font-family: sans-serif;
+}
 //Wordle Display
 .wordleRow {
   clear: both;
