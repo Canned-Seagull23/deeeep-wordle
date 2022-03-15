@@ -1,9 +1,14 @@
+.flex-container {
+  display: flex;
+}
 .wordleRow {
-  clear: both
+  clear: both;
 }
 .wordleRow div {
+  padding: 10px;
   width: 50px;
   height: 50px;
   border: 5px solid black;
+  float: left;
 }
   
