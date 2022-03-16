@@ -95,5 +95,6 @@ function checkAnswers(currentLine) {
       if(box1 == box2 && box1 == box3 && box1 == box4 && box1 == box5) {
         alert("Correct!");
       };
+    };
   };
 };
