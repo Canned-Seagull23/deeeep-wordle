@@ -86,6 +86,7 @@ function checkAnswers(currentLine) {
       };
     };
     if(box == 5) {
+      console.log("Debug");
       let box1 = document.getElementById(currentLine + "_1").innerHTML;
       let box2 = document.getElementById(currentLine + "_2").innerHTML;
       let box3 = document.getElementById(currentLine + "_3").innerHTML;
