@@ -34,12 +34,15 @@
 }
 .boxIncorrect {
   background-color: gray;
+  color: black;
 }
 .boxCorrect {
   background-color: green;
+  color: black;
 }
 .boxYellow {
   background-color: yellow;
+  color: black;
 }
 /*Body Styling*/
 body {
