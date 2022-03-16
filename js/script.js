@@ -19,9 +19,12 @@ const random = {
 };
 //Start a new Wordle
 var currentWord = random.object(words);
+var currentWordArray;
 //Regenerate Wordle
 const generateNewWord = () => {
   currentWord = random.object(words);
+  currentWordArray = currentWord.split("");
+  console.log(currentWordArray);
 };
 //Current input
 var currentInput = [];
@@ -61,5 +64,14 @@ function updateUI(currentLine) {
   for(let box = 1; box < currentInput.length + 1; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
     currentBox.innerHTML = currentInput[box - 1].toUpperCase();
+  };
+};
+//Check Answers
+function checkAnswers() {
+  for(let box = 1; box < 5; box++) {
+    var currentBox = document.getElementById(currentLine + "_" + box);
+    if(currentInput[box - 1] == currentWordArray[box-1]) {
+      alert("P");
+    };
   };
 };
