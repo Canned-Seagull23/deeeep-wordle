@@ -64,7 +64,6 @@ document.addEventListener("keydown", processInput, false);
 function updateUI(currentLine) {
   for(let clearBox = 1; clearBox < 6; clearBox++) {
     var currentClearBox = document.getElementById(currentLine + "_" + clearBox);
-    console.log(currentClearBox);
     currentClearBox.innerHTML = "";
   };
   for(let box = 1; box < currentInput.length + 1; box++) {
@@ -87,11 +86,11 @@ function checkAnswers(currentLine) {
       };
     };
     if(box == 5) {
-      let box1, box2, box3, box4, box5;
-      for(let checkWinnerBox = 1; checkWinnerBox < 6; checkWinnerBox++) {
-        let boxString = "box" + checkWinnerBox;
-        boxString = document.getElementById(currentLine + "_" + checkWinnerBox);
-      };
+      let box1 = document.getElementById(currentLine + "_1").innerHTML;
+      let box2 = document.getElementById(currentLine + "_2").innerHTML;
+      let box3 = document.getElementById(currentLine + "_3").innerHTML;
+      let box4 = document.getElementById(currentLine + "_4").innerHTML;
+      let box5 = document.getElementById(currentLine + "_5").innerHTML;
       if(box1 == box2 && box1 == box3 && box1 == box4 && box1 == box5) {
         alert("Correct!");
       };
