@@ -57,7 +57,7 @@ function enterInput() {
 document.addEventListener("keydown", processInput, false);
 //Update UI
 function updateUI(currentLine) {
-  for(let clearBox = 1; clearBox < 5; clearBox++) {
+  for(let clearBox = 1; clearBox < 6; clearBox++) {
     var currentClearBox = document.getElementById(currentLine + "_" + clearBox);
     console.log(currentClearBox);
     currentClearBox.innerHTML = "";
