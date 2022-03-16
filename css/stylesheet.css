@@ -1,4 +1,4 @@
-//Flexible Box
+/*Flexible Box*/
 .flex-container {
   display: flex;
 }
@@ -8,15 +8,15 @@
 .flex-direction-column {
   flex-direction: column;
 }
-//Utility
+/*Utility*/
 .text-align-center {
   text-align: center;
 }
-//Heading
+/*Heading*/
 .heading {
   font-family: sans-serif;
 }
-//Wordle Display
+/*Wordle Display*/
 .wordleRow {
   clear: both;
 }
