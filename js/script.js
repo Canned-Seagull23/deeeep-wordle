@@ -69,7 +69,7 @@ function updateUI(currentLine) {
 };
 //Check Answers
 function checkAnswers(currentLine) {
-  for(let box = 1; box < 5; box++) {
+  for(let box = 1; box < 6; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
     if(currentInput[box - 1] == currentWordArray[box - 1]) {
       currentBox.setAttribute("class", "boxCorrect");
