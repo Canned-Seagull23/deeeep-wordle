@@ -87,11 +87,11 @@ function checkAnswers(currentLine) {
     };
     if(box == 5) {
       console.log("Debug");
-      let box1 = document.getElementById(currentLine + "_1").innerHTML;
-      let box2 = document.getElementById(currentLine + "_2").innerHTML;
-      let box3 = document.getElementById(currentLine + "_3").innerHTML;
-      let box4 = document.getElementById(currentLine + "_4").innerHTML;
-      let box5 = document.getElementById(currentLine + "_5").innerHTML;
+      var box1 = document.getElementById(currentLine + "_1").innerHTML;
+      var box2 = document.getElementById(currentLine + "_2").innerHTML;
+      var box3 = document.getElementById(currentLine + "_3").innerHTML;
+      var box4 = document.getElementById(currentLine + "_4").innerHTML;
+      var box5 = document.getElementById(currentLine + "_5").innerHTML;
       if(box1 == box2 && box1 == box3 && box1 == box4 && box1 == box5) {
         alert("Correct!");
       };
