@@ -41,23 +41,19 @@ const processInput = (keyPressed) => {
 };
 //Process Input
 function addInput() {
-  console.log(currentInput);
   updateUI(currentLine);
 };
 function enterInput() {
   if(currentInput.length == 5) {
     currentLine = currentLine < 6 ? currentLine += 1 : 1;
     currentInput = [];
-    console.log("Continue");
   } else {
     alert("Your word is not long enough!");
-    console.log("Error");
   };
 };
 document.addEventListener("keydown", processInput, false);
 //Update UI
 function updateUI(currentLine) {
-  console.log(currentInput);
   for(let clearBox = 1; clearBox < 5; clearBox++) {
     var currentClearBox = document.getElementById(currentLine + "_" + clearBox);
     currentClearBox.innerHTML = "";
