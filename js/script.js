@@ -48,8 +48,10 @@ function enterInput() {
   if(currentInput.length == 5) {
     currentLine = currentLine < 6 ? currentLine += 1 : 1;
     currentInput = [];
+    console.log("Continue");
   } else {
     alert("Your word is not long enough!");
+    console.log("Error");
   };
 };
 document.addEventListener("keydown", processInput, false);
