@@ -41,6 +41,7 @@ const processInput = (keyPressed) => {
 };
 //Process Input
 function addInput() {
+  console.log(currentInput);
   updateUI(currentLine);
 };
 function enterInput() {
