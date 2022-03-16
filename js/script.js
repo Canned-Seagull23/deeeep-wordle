@@ -39,7 +39,7 @@ const processInput = (keyPressed) => {
 };
 //Process Input
 function enterInput() {
-  currentLine = currentLine < 6 ? currentLine++ : currentLine;
+  currentLine = currentLine < 6 ? currentLine += 1 : currentLine;
   console.log(currentLine);
 };
 document.addEventListener("keydown", processInput, false);
