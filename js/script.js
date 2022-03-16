@@ -47,6 +47,7 @@ function addInput() {
 };
 function enterInput() {
   if(currentInput.length == 5) {
+    checkAnswers(currentLine);
     currentLine = currentLine < 6 ? currentLine += 1 : 1;
     currentInput = [];
   } else {
@@ -66,7 +67,7 @@ function updateUI(currentLine) {
   };
 };
 //Check Answers
-function checkAnswers() {
+function checkAnswers(currentLine) {
   for(let box = 1; box < 5; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
     if(currentInput[box - 1] == currentWordArray[box-1]) {
