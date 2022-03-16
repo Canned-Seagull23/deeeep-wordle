@@ -28,7 +28,7 @@ var currentInput = [];
 var keypressed = {};
 const processInput = (keyPressed) => {
   var key = keyPressed.key.toLowerCase();
-  if(key.code == "Backspace") {
+  if(key.code == "backspace") {
     currentInput.pop();
   };
   else if(currentInput.length < 5) {
