@@ -19,12 +19,11 @@ const random = {
 };
 //Start a new Wordle
 var currentWord = random.object(words);
-var currentWordArray;
+var currentWordArray = currentWord.split("");
 //Regenerate Wordle
 const generateNewWord = () => {
   currentWord = random.object(words);
   currentWordArray = currentWord.split("");
-  console.log(currentWordArray);
 };
 //Current input
 var currentInput = [];
