@@ -28,7 +28,7 @@ var currentInput = [];
 var keypressed = {};
 const processInput = (keyPressed) => {
   var key = keyPressed.key.toLowerCase();
-  currentInput.push(key);
+  currentInput.push(() => {currentInput.length == 5 ? return null : return key;});
   console.log(currentInput);
 };
 document.addEventListener("keydown", processInput, false);
