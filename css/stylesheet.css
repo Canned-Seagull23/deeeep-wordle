@@ -16,6 +16,11 @@
 .heading {
   font-family: sans-serif;
 }
+/*To Word List*/
+.toWordList {
+  text-align: center;
+  background-color: skyblue;
+}
 /*Wordle Display*/
 .wordleRow {
   clear: both;
