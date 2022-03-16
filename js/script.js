@@ -30,8 +30,7 @@ const processInput = (keyPressed) => {
   var key = keyPressed.key.toLowerCase();
   if(key.code == "backspace") {
     currentInput.pop();
-  };
-  else if(currentInput.length < 5) {
+  } else if(currentInput.length < 5) {
     currentInput.push(key);
   };
   console.log(currentInput);
