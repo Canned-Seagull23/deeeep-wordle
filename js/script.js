@@ -86,5 +86,14 @@ function checkAnswers(currentLine) {
         };
       };
     };
+    if(box == 5) {
+      let box1, box2, box3, box4, box5;
+      for(let checkWinnerBox = 1; checkWinnerBox < 6; checkWinnerBox++) {
+        let boxString = "box" + checkWinnerBox;
+        boxString = document.getElementById(currentLine + "_" + checkWinnerBox);
+      };
+      if(box1 == box2 && box1 == box3 && box1 == box4 && box1 == box5) {
+        alert("Correct!");
+      };
   };
 };
