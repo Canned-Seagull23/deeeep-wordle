@@ -44,7 +44,7 @@ function addInput() {
 };
 function enterInput() {
   currentLine = currentLine < 6 ? currentLine += 1 : 1;
-  updateUI(currentLine);
+  currentInput = [];  
 };
 document.addEventListener("keydown", processInput, false);
 //Update UI
