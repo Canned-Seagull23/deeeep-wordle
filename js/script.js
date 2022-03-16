@@ -70,6 +70,7 @@ function updateUI(currentLine) {
 function checkAnswers(currentLine) {
   for(let box = 1; box < 6; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
+    currentBox.setAttribute("class", "boxIncorrect");
     if(currentInput[box - 1] == currentWordArray[box - 1]) {
       currentBox.setAttribute("class", "boxCorrect");
     } else {
