@@ -49,8 +49,8 @@ function enterInput() {
 document.addEventListener("keydown", processInput, false);
 //Update UI
 function updateUI(currentLine) {
-  for(let box = 1; box < 5; box++) {
+  for(let box = 1; box < currentInput.length; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
-    currentBox.innerHTML = currentInput[box - 1];
+    currentBox.innerHTML = currentInput[box];
   };
 };
