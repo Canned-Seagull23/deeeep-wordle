@@ -51,6 +51,6 @@ document.addEventListener("keydown", processInput, false);
 function updateUI(currentLine) {
   for(let box = 1; box < 5; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
-    currentBox.innerHTML = currentInput[box];
+    currentBox.innerHTML = currentInput[box - 1];
   };
 };
