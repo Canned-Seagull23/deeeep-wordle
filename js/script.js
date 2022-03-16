@@ -5,7 +5,7 @@ const words = ["depth",
                "ocean",
                "charge",
                "whale",
-               "squid",
+               "squid"
                ];
 //Utility Functions
 const random = {
