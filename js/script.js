@@ -40,7 +40,7 @@ const processInput = (keyPressed) => {
 //Process Input
 function enterInput() {
   currentLine = currentLine < 6 ? currentLine += 1 : 1;
-  console.log(currentLine);
+  updateUI(currentLine);
 };
 document.addEventListener("keydown", processInput, false);
 //Update UI
