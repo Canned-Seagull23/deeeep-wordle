@@ -3,7 +3,6 @@ const words = ["depth",
                "boost",
                "shark",
                "ocean",
-               "charge",
                "whale",
                "squid"
                ];
@@ -73,6 +72,12 @@ function checkAnswers(currentLine) {
     var currentBox = document.getElementById(currentLine + "_" + box);
     if(currentInput[box - 1] == currentWordArray[box - 1]) {
       currentBox.setAttribute("class", "boxCorrect");
+    } else {
+      for(let arrayIndex = 0; arrayIndex < 5; arrayIndex++) {
+        if(currentInput[box - 1] == currentWordArray[arrayIndex]) {
+          currentBox.setAttribute("class", "boxYellow");
+        };
+      };
     };
   };
 };
