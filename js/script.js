@@ -43,3 +43,10 @@ function enterInput() {
   console.log(currentLine);
 };
 document.addEventListener("keydown", processInput, false);
+//Update UI
+function updateUI(currentLine) {
+  for(let box = 1; box < 5; box++) {
+    var currentBox = document.getElementById(currentLine + "_" + box);
+    console.log(currentBox);
+  };
+};
