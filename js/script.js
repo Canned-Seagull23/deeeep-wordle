@@ -22,11 +22,13 @@ var currentWord = random.object(words);
 const generateNewWord = () => {
   currentWord = random.object(words);
 };
+//Current input
+var currentInput = [];
 //Detect Input
 var keypressed = {};
 const processInput = (keyPressed) => {
   var key = keyPressed.key.toLowerCase();
-  keypressed.key = true;
-  console.log(key);
+  currentInput.push(key);
+  console.log(currentInput);
 };
-document.addEventListener("keyup", processInput, false);
+document.addEventListener("keydown", processInput, false);
