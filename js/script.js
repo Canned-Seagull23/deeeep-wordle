@@ -45,8 +45,12 @@ function addInput() {
   updateUI(currentLine);
 };
 function enterInput() {
-  currentLine = currentLine < 6 ? currentLine += 1 : 1;
-  currentInput = [];  
+  if(currentInput.length == 5) {
+    currentLine = currentLine < 6 ? currentLine += 1 : 1;
+    currentInput = [];
+  } else {
+    alert("Your word is not long enough!");
+  };
 };
 document.addEventListener("keydown", processInput, false);
 //Update UI
