@@ -59,6 +59,7 @@ document.addEventListener("keydown", processInput, false);
 function updateUI(currentLine) {
   for(let clearBox = 1; clearBox < 5; clearBox++) {
     var currentClearBox = document.getElementById(currentLine + "_" + clearBox);
+    console.log(currentClearBox);
     currentClearBox.innerHTML = "";
   };
   for(let box = 1; box < currentInput.length + 1; box++) {
@@ -68,7 +69,7 @@ function updateUI(currentLine) {
 };
 //Check Answers
 function checkAnswers(currentLine) {
-  for(let box = 0; box < 5; box++) {
+  for(let box = 1; box < 5; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
     if(currentInput[box - 1] == currentWordArray[box - 1]) {
       currentBox.setAttribute("class", "boxCorrect");
