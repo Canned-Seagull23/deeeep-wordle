@@ -7,6 +7,7 @@ const words = ["depth",
                "whale",
                "squid"
                ];
+var currentLine = 1;
 //Utility Functions
 const random = {
   integer: function(max, min) {
@@ -35,9 +36,10 @@ const processInput = (keyPressed) => {
   } else if(currentInput.length < 5) {
     currentInput.push(key);
   };
-  console.log(currentInput);
 };
 //Process Input
 function enterInput() {
+  currentLine = currentLine < 6 ? currentLine++ : currentLine;
+  console.log(currentLine);
 };
 document.addEventListener("keydown", processInput, false);
