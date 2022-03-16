@@ -13,7 +13,7 @@ const random = {
     return Math.floor(Math.random() * max) + min;
   },
   object: function(array) {
-    return array[random.integer(array.length)];
+    return array[random.integer(array.length, 0)];
   }
 };
 //Start a new Wordle
