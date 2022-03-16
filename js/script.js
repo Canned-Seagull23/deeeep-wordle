@@ -35,9 +35,13 @@ const processInput = (keyPressed) => {
     enterInput();
   } else if(currentInput.length < 5) {
     currentInput.push(key);
+    addInput();
   };
 };
 //Process Input
+function addInput() {
+  updateUI(currentLine);
+};
 function enterInput() {
   currentLine = currentLine < 6 ? currentLine += 1 : 1;
   updateUI(currentLine);
