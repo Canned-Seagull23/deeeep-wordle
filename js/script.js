@@ -52,6 +52,9 @@ document.addEventListener("keydown", processInput, false);
 //Update UI
 function updateUI(currentLine) {
   console.log(currentInput);
+  for(let clearBox = 1; clearBox < 5; clearBox++) {
+    var currentClearBox = document.getElementById(currentLine + "_" + clearBox);
+    currentClearBox.innerHTML = "";
   for(let box = 1; box < currentInput.length + 1; box++) {
     var currentBox = document.getElementById(currentLine + "_" + box);
     currentBox.innerHTML = currentInput[box - 1].toUpperCase();
