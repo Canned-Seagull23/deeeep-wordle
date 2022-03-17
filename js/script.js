@@ -88,8 +88,8 @@ function checkValidChar(keyPressed) {
   let key = keyPressed.code;
   if(key == "KeyA" || key == "KeyB" || key == "KeyC" || key == "KeyD" || key == "KeyE" || key == "KeyF" || key == "KeyG" || key == "KeyH" || key == "KeyI" || key == "KeyJ" || key == "KeyK" || key == "KeyL" || key == "KeyM" || key == "KeyN" || key == "KeyO" || key == "KeyP" || key == "KeyQ" || key == "KeyR" || key == "KeyS" || key == "KeyT" || key == "KeyU" || key == "KeyV" || key == "KeyW" || key == "KeyX" || key == "KeyY" || key == "KeyZ") {
      currentInput.push(keyPressed.key.toLowerCase());
-  }
-}
+  };
+};
 function enterInput() {
   if(currentInput.length == 5 && currentLine != 6) {
     checkAnswers(currentLine);
@@ -102,6 +102,7 @@ function enterInput() {
 function revealAnswers() {
   if(currentLine == 6 && won == false) {
     alert("The correct answer was" + currentWord);
+  };
 };
 document.addEventListener("keydown", processInput, false);
 //Update UI
@@ -141,4 +142,4 @@ function checkAnswers(currentLine) {
       };
     };
   };
-};};
+};
