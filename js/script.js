@@ -1,10 +1,13 @@
 //Variables
 const words = ["depth",
+               "ocean",
+               "water",
+               "coral",
                "boost",
                "shark",
-               "ocean",
                "whale",
-               "squid"
+               "squid",
+               "hippo"
                ];
 var currentLine = 1;
 //Utility Functions
