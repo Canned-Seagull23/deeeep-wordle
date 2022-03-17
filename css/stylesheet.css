@@ -8,6 +8,9 @@
 .flex-direction-column {
   flex-direction: column;
 }
+.no-wrap {
+  flex-wrap: nowrap;
+}
 /*Utility*/
 .text-align-center {
   text-align: center;
