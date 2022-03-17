@@ -27,10 +27,6 @@
   background-color: dodgerblue;
   color: seashell;
 }
-.toWordList:focus {
-  outline: none;
-  box-shadow: none;
-}
 /*Wordle Display*/
 .wordleRow {
   clear: both;
