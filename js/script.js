@@ -10,6 +10,7 @@ const words = ["depth",
                "hippo"
                ];
 var currentLine = 1;
+var won = false;
 //Utility Functions
 const random = {
   integer: function(max, min) {
@@ -28,6 +29,7 @@ const generateNewWord = () => {
   currentWordArray = currentWord.split("");
   currentInput = [];
   currentLine = 1;
+  won = false;
   for(let line = 1; line < 7; line++) {
     var box1 = document.getElementById(line + "_1");
     var box2 = document.getElementById(line + "_2");
@@ -70,6 +72,7 @@ const processInput = (keyPressed) => {
     addInput();
   } else if(keyPressed.code == "Enter") {
     enterInput();
+    revealAnswers();
   } else if(currentInput.length < 5) {
     checkValidChar(keyPressed);
     addInput();
@@ -77,7 +80,9 @@ const processInput = (keyPressed) => {
 };
 //Process Input
 function addInput() {
-  updateUI(currentLine);
+  if(won == false) {
+    updateUI(currentLine);
+  };
 };
 function checkValidChar(keyPressed) {
   let key = keyPressed.code;
@@ -86,13 +91,17 @@ function checkValidChar(keyPressed) {
   }
 }
 function enterInput() {
-  if(currentInput.length == 5) {
+  if(currentInput.length == 5 && currentLine != 6) {
     checkAnswers(currentLine);
     currentLine = currentLine < 6 ? currentLine += 1 : 1;
     currentInput = [];
   } else {
     alert("Your word is not long enough!");
   };
+};
+function revealAnswers() {
+  if(currentLine == 6 && won == false) {
+    alert("The correct answer was" + currentWord);
 };
 document.addEventListener("keydown", processInput, false);
 //Update UI
@@ -128,6 +137,7 @@ function checkAnswers(currentLine) {
       var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
       if(box1 === currentWordArray[0] && box2 === currentWordArray[1] && box3 === currentWordArray[2] && box4 === currentWordArray[3] && box5 === currentWordArray[4]) {
         alert("Correct!");
+        won = true;
       };
     };
   };
