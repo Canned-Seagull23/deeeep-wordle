@@ -44,16 +44,16 @@ const generateNewWord = () => {
     box5.classList.remove("boxIncorrect");
     //Remove Correct class
     box1.classList.remove("boxIncorrect");
-    box1.classList.remove("boxIncorrect");
-    box1.classList.remove("boxIncorrect");
-    box1.classList.remove("boxIncorrect");
-    box1.classList.remove("boxIncorrect");
+    box2.classList.remove("boxIncorrect");
+    box3.classList.remove("boxIncorrect");
+    box4.classList.remove("boxIncorrect");
+    box5.classList.remove("boxIncorrect");
     //remove yellow class
     box1.classList.remove("boxYellow");
-    box1.classList.remove("boxYellow");
-    box1.classList.remove("boxYellow");
-    box1.classList.remove("boxYellow");
-    box1.classList.remove("boxYellow");
+    box2.classList.remove("boxYellow");
+    box3.classList.remove("boxYellow");
+    box4.classList.remove("boxYellow");
+    box5.classList.remove("boxYellow");
   };
 };
 //Current input
