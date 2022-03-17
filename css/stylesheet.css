@@ -16,7 +16,7 @@
 .heading {
   font-family: sans-serif;
 }
-/*To Word List*/
+/*Buttons*/
 .toWordList {
   text-align: center;
   background-color: dodgerblue;
@@ -44,6 +44,9 @@
 .boxYellow {
   background-color: yellow;
   color: black;
+}
+.boxText {
+  font-size: 3rem;
 }
 /*Body Styling*/
 body {
