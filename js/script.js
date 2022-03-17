@@ -141,4 +141,4 @@ function checkAnswers(currentLine) {
       };
     };
   };
-};
+};};
