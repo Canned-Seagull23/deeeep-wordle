@@ -85,13 +85,15 @@ function checkAnswers(currentLine) {
         };
       };
     };
-    var box1 = document.getElementById(currentLine + "_1").innerHTML.toLowerCase();
-    var box2 = document.getElementById(currentLine + "_2").innerHTML.toLowerCase();
-    var box3 = document.getElementById(currentLine + "_3").innerHTML.toLowerCase();
-    var box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
-    var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
-    if(box1 == box2 && box1 == box3 && box1 == box4 && box1 == box5) {
-      alert("Correct!");
+    if(box == 5) {
+      var box1 = document.getElementById(currentLine + "_1").innerHTML.toLowerCase();
+      var box2 = document.getElementById(currentLine + "_2").innerHTML.toLowerCase();
+      var box3 = document.getElementById(currentLine + "_3").innerHTML.toLowerCase();
+      var box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
+      var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
+      if(box1 === currentWordArray[0] && box2 === currentWordArray[1] && box3 === currentWordArray[2] && box4 === currentWordArray[3] && box5 === currentWordArray[4]) {
+        alert("Correct!");
+      };
     };
   };
 };
