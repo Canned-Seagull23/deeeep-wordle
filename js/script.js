@@ -23,6 +23,17 @@ var currentWordArray = currentWord.split("");
 const generateNewWord = () => {
   currentWord = random.object(words);
   currentWordArray = currentWord.split("");
+  currentInput = [];
+  currentLine = 1;
+  for(let line = 1; line < 7; line++) {
+    for(let column = 1; column < 6; column++) {
+      var box1 = document.getElementById(line  "_1").innerHTML.toLowerCase();
+      var box2 = document.getElementById(lne + "_2").innerHTML.toLowerCase();
+      var box3 = document.getElementById(lie + "_3").innerHTML.toLowerCase();
+      var box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
+      var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
+    };
+  };
 };
 //Current input
 var currentInput = [];
