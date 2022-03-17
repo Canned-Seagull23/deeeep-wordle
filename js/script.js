@@ -85,11 +85,11 @@ function checkAnswers(currentLine) {
         };
       };
     };
-    var box1 = document.getElementById(currentLine + "_1").innerHTML;
-    var box2 = document.getElementById(currentLine + "_2").innerHTML;
-    var box3 = document.getElementById(currentLine + "_3").innerHTML;
-    var box4 = document.getElementById(currentLine + "_4").innerHTML;
-    var box5 = document.getElementById(currentLine + "_5").innerHTML;
+    var box1 = document.getElementById(currentLine + "_1").innerHTML.toLowerCase();
+    var box2 = document.getElementById(currentLine + "_2").innerHTML.toLowerCase();
+    var box3 = document.getElementById(currentLine + "_3").innerHTML.toLowerCase();
+    var box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
+    var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
     if(box1 == box2 && box1 == box3 && box1 == box4 && box1 == box5) {
       alert("Correct!");
     };
