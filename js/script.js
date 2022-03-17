@@ -26,13 +26,34 @@ const generateNewWord = () => {
   currentInput = [];
   currentLine = 1;
   for(let line = 1; line < 7; line++) {
-    for(let column = 1; column < 6; column++) {
-      var box1 = document.getElementById(line  "_1").innerHTML.toLowerCase();
-      var box2 = document.getElementById(lne + "_2").innerHTML.toLowerCase();
-      var box3 = document.getElementById(lie + "_3").innerHTML.toLowerCase();
-      var box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
-      var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
-    };
+    var box1 = document.getElementById(line + "_1");
+    var box2 = document.getElementById(line + "_2");
+    var box3 = document.getElementById(line + "_3");
+    var box4 = document.getElementById(line + "_4");
+    var box5 = document.getElementById(line + "_5");
+    box1.innerHTML = "";
+    box2.innerHTML = "";
+    box3.innerHTML = "";
+    box4.innerHTML = "";
+    box5.innerHTML = "";
+    //remove incorrect class
+    box1.classList.remove("boxIncorrect");
+    box2.classList.remove("boxIncorrect");
+    box3.classList.remove("boxIncorrect");
+    box4.classList.remove("boxIncorrect");
+    box5.classList.remove("boxIncorrect");
+    //Remove Correct class
+    box1.classList.remove("boxIncorrect");
+    box1.classList.remove("boxIncorrect");
+    box1.classList.remove("boxIncorrect");
+    box1.classList.remove("boxIncorrect");
+    box1.classList.remove("boxIncorrect");
+    /remove yellow class
+    box1.classList.remove("boxYellow");
+    box1.classList.remove("boxYellow");
+    box1.classList.remove("boxYellow");
+    box1.classList.remove("boxYellow");
+    box1.classList.remove("boxYellow");
   };
 };
 //Current input
