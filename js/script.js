@@ -101,7 +101,7 @@ function enterInput() {
 };
 function revealAnswers() {
   if(currentLine == 7 && won == false) {
-    alert("The correct answer was " + currentWord);
+    alert("The correct answer was \"" + currentWord + "\"");
   };
 };
 document.addEventListener("keydown", processInput, false);
