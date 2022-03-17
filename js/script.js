@@ -91,7 +91,7 @@ function checkValidChar(keyPressed) {
   };
 };
 function enterInput() {
-  if(currentInput.length == 5 && won == false) {
+  if(currentInput.length == 5 && won == false && currentLine != 7) {
     checkAnswers(currentLine);
     currentLine = currentLine < 6 ? currentLine += 1 : 1;
     currentInput = [];
