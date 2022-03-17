@@ -48,7 +48,7 @@ const generateNewWord = () => {
     box1.classList.remove("boxIncorrect");
     box1.classList.remove("boxIncorrect");
     box1.classList.remove("boxIncorrect");
-    /remove yellow class
+    //remove yellow class
     box1.classList.remove("boxYellow");
     box1.classList.remove("boxYellow");
     box1.classList.remove("boxYellow");
