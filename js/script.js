@@ -91,7 +91,7 @@ function checkValidChar(keyPressed) {
   };
 };
 function enterInput() {
-  if(currentInput.length == 5 && won == false && currentLine != 7) {
+  if(currentInput.length == 5 && won === false && currentLine != 7) {
     checkAnswers(currentLine);
     currentLine += 1;
     currentInput = [];
@@ -100,7 +100,7 @@ function enterInput() {
   };
 };
 function revealAnswers() {
-  if(currentLine == 7 && won == false) {
+  if(currentLine == 7 && won === false) {
     alert("The correct answer was \"" + currentWord + "\"");
   };
 };
