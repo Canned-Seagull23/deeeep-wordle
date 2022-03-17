@@ -1,4 +1,3 @@
-console.log("Updated!");
 //Variables
 const words = ["depth",
                "boost",
