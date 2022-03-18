@@ -7,7 +7,9 @@ const words = ["depth",
                "shark",
                "whale",
                "squid",
-               "hippo"
+               "hippo",
+               "giant",
+               "bleed"               
                ];
 var currentLine = 1;
 var won = false;
