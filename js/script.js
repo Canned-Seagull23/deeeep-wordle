@@ -3,13 +3,17 @@ const words = ["depth",
                "ocean",
                "water",
                "coral",
+               "algae",
                "boost",
                "shark",
                "whale",
                "squid",
                "hippo",
                "giant",
-               "bleed"               
+               "snake",
+               "bleed",
+               "coins",
+               "score"
                ];
 var currentLine = 1;
 var won = false;
