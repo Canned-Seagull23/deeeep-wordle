@@ -10,10 +10,14 @@ const words = ["depth",
                "squid",
                "hippo",
                "giant",
+               "manta",
+               "polar",
+               "jelly",
                "snake",
                "bleed",
                "coins",
-               "score"
+               "score",
+               "skins"
                ];
 var currentLine = 1;
 var won = false;
