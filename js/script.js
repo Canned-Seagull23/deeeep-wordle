@@ -81,7 +81,7 @@ const processInput = (keyPressed) => {
     input.addInput();
   } else if(keyPressed.code == "Enter") {
     checkInput.checkValidWord(currentInput);
-    input.enterInput();
+    if(!input.enterInput()) {return;};
     revealAnswers();
   } else if(currentInput.length < 5) {
     checkInput.checkValidChar(keyPressed);
@@ -116,14 +116,11 @@ const checkInput = {
   },
   checkValidWord: function(currentInput) {
     for(let arrayIndex = 0; arrayIndex < words.length; arrayIndex++) {
-      console.log(words[arrayIndex].split(''));
-      console.log(currentInput);
       if(currentInput.join("") === words[arrayIndex]) {
-        console.log(words[arrayIndex].split(""));
-        console.log("debug");
-        return;
+        return true;
+        console.log('debug');
+        break;
       };
-      console.log(arrayIndex);
     };
     return;
   }
