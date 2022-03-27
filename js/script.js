@@ -118,6 +118,7 @@ const checkInput = {
     for(let arrayIndex = 0; arrayIndex < words.length; arrayIndex++) {
       if(currentInput == words[arrayIndex].split("")) {
         return;
+        console.log(words[arrayIndex].split(""));
         console.log("x");
       };
       console.log(arrayIndex);
