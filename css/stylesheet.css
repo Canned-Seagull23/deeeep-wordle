@@ -1,3 +1,12 @@
+/*Quicksand*/
+@font-face {
+  font-family: QuicksandRegular;
+  src: url(../fonts/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: QuicksandBold;
+  src: url(../fonts/Quicksand-Bold.ttf);
+}
 /*Flexible Box*/
 .flex-container {
   display: flex;
@@ -63,5 +72,5 @@
 body {
   background-image: url("../bgimage.png");
   color: aliceblue;
-  font-family: sans-serif;
+  font-family: QuicksandRegular;
 }
