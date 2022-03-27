@@ -115,7 +115,7 @@ const checkInput = {
     };
   },
   checkValidWord: function(currentInput) {
-    for(let arrayIndex = 0; arrayIndex < words.length; x++) {
+    for(let arrayIndex = 0; arrayIndex < words.length; arrayIndex++) {
       if(currentInput == words[arrayIndex].split("")) {
         return;
         console.log("x");
