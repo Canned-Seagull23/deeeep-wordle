@@ -21,6 +21,7 @@ const words = ["depth",
                ];
 var currentLine = 1;
 var won = false;
+var validWord;
 //Utility Functions
 const random = {
   integer: function(max, min) {
@@ -80,8 +81,9 @@ const processInput = (keyPressed) => {
     currentInput.pop();
     input.addInput();
   } else if(keyPressed.code == "Enter") {
-    checkInput.checkValidWord(currentInput);
-    if(!input.enterInput()) {return;};
+    validWord = checkInput.checkValidWord(currentInput);
+    console.log(validWord);
+    input.enterInput();
     revealAnswers();
   } else if(currentInput.length < 5) {
     checkInput.checkValidChar(keyPressed);
@@ -122,7 +124,6 @@ const checkInput = {
         break;
       };
     };
-    return;
   }
 };
 function revealAnswers() {
