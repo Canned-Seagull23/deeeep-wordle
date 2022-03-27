@@ -56,7 +56,7 @@
 }
 /*Body Styling*/
 body {
-  background-color: midnightblue;
+  background-image: url("bgimage.png");
   color: aliceblue;
   font-family: sans-serif;
 }
