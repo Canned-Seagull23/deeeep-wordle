@@ -82,7 +82,10 @@ const processInput = (keyPressed) => {
     input.addInput();
   } else if(keyPressed.code == "Enter") {
     validWord = checkInput.checkValidWord(currentInput);
-    console.log(validWord);
+    if(!validWord) {
+      alert("Not a valid word!");
+      return;
+    };
     input.enterInput();
     revealAnswers();
   } else if(currentInput.length < 5) {
@@ -120,7 +123,6 @@ const checkInput = {
     for(let arrayIndex = 0; arrayIndex < words.length; arrayIndex++) {
       if(currentInput.join("") === words[arrayIndex]) {
         return true;
-        console.log('debug');
         break;
       };
     };
