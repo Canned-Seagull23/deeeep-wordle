@@ -124,6 +124,7 @@ const checkInput = {
         break;
       };
     };
+    return false;
   }
 };
 function revealAnswers() {
