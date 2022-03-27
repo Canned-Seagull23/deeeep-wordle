@@ -2,6 +2,9 @@
 .flex-container {
   display: flex;
 }
+.no-flex {
+  display: block;
+}
 .justify-content-center {
   justify-content: center;
 }
