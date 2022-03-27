@@ -34,7 +34,7 @@ const random = {
 var currentWord = random.object(words);
 var currentWordArray = currentWord.split("");
 //Regenerate Wordle
-const generateNewWord = () => {
+const generateNewWord = function() {
   currentWord = random.object(words);
   currentWordArray = currentWord.split("");
   currentInput = [];
@@ -74,41 +74,56 @@ const generateNewWord = () => {
 //Current input
 var currentInput = [];
 //Detect Input
-var keypressed = {};
 const processInput = (keyPressed) => {
   var key = keyPressed.key.toLowerCase();
   if(keyPressed.code == "Backspace") {
     currentInput.pop();
-    addInput();
+    input.addInput();
   } else if(keyPressed.code == "Enter") {
-    enterInput();
+    checkInput.checkValidWord(currentInput);
+    input.enterInput();
     revealAnswers();
   } else if(currentInput.length < 5) {
-    checkValidChar(keyPressed);
-    addInput();
+    checkInput.checkValidChar(keyPressed);
+    input.addInput();
   };
 };
 //Process Input
-function addInput() {
-  if(won == false) {
-    updateUI(currentLine);
-  };
+const input = {
+  addInput: function() {
+    if(won == false) {
+      updateUI(currentLine);
+    };
+  },
+  enterInput: function() {
+    if(won == true) {return;};
+    if(currentInput.length == 5 && currentLine != 7) {
+      checkAnswers(currentLine);
+      currentLine += 1;
+      currentInput = [];
+    } else {
+        alert("Your word is not long enough!");
+    };
+  },
 };
-function checkValidChar(keyPressed) {
-  let key = keyPressed.code;
-  if(key == "KeyA" || key == "KeyB" || key == "KeyC" || key == "KeyD" || key == "KeyE" || key == "KeyF" || key == "KeyG" || key == "KeyH" || key == "KeyI" || key == "KeyJ" || key == "KeyK" || key == "KeyL" || key == "KeyM" || key == "KeyN" || key == "KeyO" || key == "KeyP" || key == "KeyQ" || key == "KeyR" || key == "KeyS" || key == "KeyT" || key == "KeyU" || key == "KeyV" || key == "KeyW" || key == "KeyX" || key == "KeyY" || key == "KeyZ") {
-     currentInput.push(keyPressed.key.toLowerCase());
-  };
-};
-function enterInput() {
-  if(won == true) {return;};
-  if(currentInput.length == 5 && currentLine != 7) {
-    checkAnswers(currentLine);
-    currentLine += 1;
-    currentInput = [];
-  } else {
-    alert("Your word is not long enough!");
-  };
+//Check Words
+const checkInput = {
+  checkValidChar: function(keyPressed) {
+    let key = keyPressed.code;
+    if(key == "KeyA" || key == "KeyB" || key == "KeyC" || key == "KeyD" || key == "KeyE" || key == "KeyF" || key == "KeyG" || key == "KeyH" || key == "KeyI" || key == "KeyJ" || key == "KeyK" || key == "KeyL" || key == "KeyM" || key == "KeyN" || key == "KeyO" || key == "KeyP" || key == "KeyQ" || key == "KeyR" || key == "KeyS" || key == "KeyT" || key == "KeyU" || key == "KeyV" || key == "KeyW" || key == "KeyX" || key == "KeyY" || key == "KeyZ") {
+       currentInput.push(keyPressed.key.toLowerCase());
+    };
+  },
+  checkValidWord: function(currentInput) {
+    for(let arrayIndex = 0; arrayIndex < words.length; x++) {
+      if(currentInput == words[arrayIndex].split("")) {
+        return;
+        console.log("x");
+      };
+      console.log(arrayIndex);
+    };
+    return;
+  }
 };
 function revealAnswers() {
   if(currentLine == 7 && won === false) {
