@@ -173,3 +173,6 @@ function checkAnswers(currentLine) {
     };
   };
 };
+//Cookies
+document.cookie = "name=currentInput; "
+function setCookie(cookie)
