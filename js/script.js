@@ -19,8 +19,34 @@ const words = ["depth",
                "score",
                "skins"
                ];
-var currentLine = 1;
-var won = false;
+let currentLine = 1;
+let won = false;
+const cache = {
+  setCookie: function (name, value, expiryDays, path) {
+      const d = new Date();
+      d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
+      let expiry = d.toUTCString();
+      document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
+  },
+  getCookie: function (cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  },
+  deleteCookie: function (name) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+  }
+};
 //Utility Functions
 const random = {
   integer: function(max, min) {
@@ -31,8 +57,8 @@ const random = {
   }
 };
 //Start a new Wordle
-var currentWord = random.object(words);
-var currentWordArray = currentWord.split("");
+let currentWord = random.object(words);
+let currentWordArray = currentWord.split("");
 //Regenerate Wordle
 const generateNewWord = () => {
   currentWord = random.object(words);
@@ -41,11 +67,11 @@ const generateNewWord = () => {
   currentLine = 1;
   won = false;
   for(let line = 1; line < 7; line++) {
-    var box1 = document.getElementById(line + "_1");
-    var box2 = document.getElementById(line + "_2");
-    var box3 = document.getElementById(line + "_3");
-    var box4 = document.getElementById(line + "_4");
-    var box5 = document.getElementById(line + "_5");
+    let box1 = document.getElementById(line + "_1");
+    let box2 = document.getElementById(line + "_2");
+    let box3 = document.getElementById(line + "_3");
+    let box4 = document.getElementById(line + "_4");
+    let box5 = document.getElementById(line + "_5");
     box1.innerHTML = "";
     box2.innerHTML = "";
     box3.innerHTML = "";
@@ -72,11 +98,11 @@ const generateNewWord = () => {
   };
 };
 //Current input
-var currentInput = [];
+let currentInput = [];
 //Detect Input
-var keypressed = {};
+let keypressed = {};
 const processInput = (keyPressed) => {
-  var key = keyPressed.key.toLowerCase();
+  let key = keyPressed.key.toLowerCase();
   if(keyPressed.code == "Backspace") {
     currentInput.pop();
     addInput();
@@ -119,18 +145,18 @@ document.addEventListener("keydown", processInput, false);
 //Update UI
 function updateUI(currentLine) {
   for(let clearBox = 1; clearBox < 6; clearBox++) {
-    var currentClearBox = document.getElementById(currentLine + "_" + clearBox);
+    let currentClearBox = document.getElementById(currentLine + "_" + clearBox);
     currentClearBox.innerHTML = "";
   };
   for(let box = 1; box < currentInput.length + 1; box++) {
-    var currentBox = document.getElementById(currentLine + "_" + box);
+    let currentBox = document.getElementById(currentLine + "_" + box);
     currentBox.innerHTML = currentInput[box - 1].toUpperCase();
   };
 };
 //Check Answers
 function checkAnswers(currentLine) {
   for(let box = 1; box < 6; box++) {
-    var currentBox = document.getElementById(currentLine + "_" + box);
+    let currentBox = document.getElementById(currentLine + "_" + box);
     currentBox.setAttribute("class", "boxIncorrect");
     if(currentInput[box - 1] == currentWordArray[box - 1]) {
       currentBox.setAttribute("class", "boxCorrect");
@@ -142,11 +168,11 @@ function checkAnswers(currentLine) {
       };
     };
     if(box == 5) {
-      var box1 = document.getElementById(currentLine + "_1").innerHTML.toLowerCase();
-      var box2 = document.getElementById(currentLine + "_2").innerHTML.toLowerCase();
-      var box3 = document.getElementById(currentLine + "_3").innerHTML.toLowerCase();
-      var box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
-      var box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
+      let box1 = document.getElementById(currentLine + "_1").innerHTML.toLowerCase();
+      let box2 = document.getElementById(currentLine + "_2").innerHTML.toLowerCase();
+      let box3 = document.getElementById(currentLine + "_3").innerHTML.toLowerCase();
+      let box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
+      let box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
       if(box1 === currentWordArray[0] && box2 === currentWordArray[1] && box3 === currentWordArray[2] && box4 === currentWordArray[3] && box5 === currentWordArray[4]) {
         alert("Correct!");
         won = true;
