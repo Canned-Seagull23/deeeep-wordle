@@ -19,12 +19,12 @@ const words = ["depth",
                "score",
                "skins"
                ];
-function setCookie(name, value) {
-  const d = new Date();
-  d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
-  let expiry = d.toUTCString();
-  document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
-};
+// function setCookie(name, value) {
+//   const d = new Date();
+//   d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
+//   let expiry = d.toUTCString();
+//   document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
+// };
 //Utility Functions
 const random = {
   integer: function(max, min) {
@@ -44,6 +44,36 @@ const generateNewWord = () => {
   try {
     currentWord = (() => {
       let name = "word=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      throw '';
+    })();
+    currentInput = (() => {
+      let name = "currentInput";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      throw '';
+    })();
+    currentLine = (() => {
+      let name = "currentLine=";
       let decodedCookie = decodeURIComponent(document.cookie);
       let ca = decodedCookie.split(';');
       for (let i = 0; i < ca.length; i++) {
@@ -120,7 +150,7 @@ function addInput() {
 };
 function checkValidChar(keyPressed) {
   let key = keyPressed.code;
-  if(key == "KeyA" || key == "KeyB" || key == "KeyC" || key == "KeyD" || key == "KeyE" || key == "KeyF" || key == "KeyG" || key == "KeyH" || key == "KeyI" || key == "KeyJ" || key == "KeyK" || key == "KeyL" || key == "KeyM" || key == "KeyN" || key == "KeyO" || key == "KeyP" || key == "KeyQ" || key == "KeyR" || key == "KeyS" || key == "KeyT" || key == "KeyU" || key == "KeyV" || key == "KeyW" || key == "KeyX" || key == "KeyY" || key == "KeyZ") {
+  if(key.match(new RegExp("Key[A-Z]"))) {
      currentInput.push(keyPressed.key.toLowerCase());
   };
 };
@@ -132,7 +162,9 @@ function enterInput() {
     currentInput = [];
   } else {
     alert("Your word is not long enough!");
-  };
+  };    
+  document.cookie = `currentInput=${currentInput}`;
+  document.cookie = `currentLine=${currentLine}`;
 };
 function revealAnswers() {
   if(currentLine == 7 && won === false) {
