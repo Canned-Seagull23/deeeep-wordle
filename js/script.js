@@ -37,8 +37,10 @@ const random = {
   }
 };
 //Start a new Wordle
-// let currentWord = random.object(words);
-// let currentWordArray = currentWord.split("");
+let currentWord, currentWordArray;
+let currentInput = [];
+let currentLine = 1;
+let won = false;
 //Regenerate Wordle
 const generateNewWord = () => {
   try {
@@ -58,13 +60,13 @@ const generateNewWord = () => {
       throw '';
     })();
   } catch (e) {
-    let currentWord = random.object(words);
-    let currentWordArray = currentWord.split("");
+    currentWord = random.object(words);
+    currentWordArray = currentWord.split("");
   };
   document.cookie = `word=${currentWord}`;
-  let currentInput = [];
-  let currentLine = 1;
-  let won = false;
+  currentInput = [];
+  currentLine = 1;
+  won = false;
   for(let line = 1; line < 7; line++) {
     let box1 = document.getElementById(line + "_1");
     let box2 = document.getElementById(line + "_2");
@@ -97,8 +99,6 @@ const generateNewWord = () => {
   };
 };
 generateNewWord();
-//Current input
-let currentInput = [];
 //Detect Input
 let keypressed = {};
 const processInput = (keyPressed) => {
