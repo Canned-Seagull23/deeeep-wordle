@@ -68,6 +68,10 @@
   font-size: 4rem;
   padding: 10px;
 }
+wordle-wrapper {
+    display: block;
+    line-height: 50px;
+}
 /*Body Styling*/
 body {
   background-image: url("../bgimage.png");
