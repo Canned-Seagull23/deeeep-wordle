@@ -68,7 +68,7 @@
   font-size: 4rem;
   padding: 10px;
 }
-wordle-wrapper {
+.wordleWrapper {
     display: block;
     line-height: 50px;
 }
