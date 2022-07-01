@@ -21,31 +21,11 @@ const words = ["depth",
                ];
 let currentLine = 1;
 let won = false;
-const cache = {
-  setCookie: function (name, value, expiryDays, path) {
-      const d = new Date();
-      d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
-      let expiry = d.toUTCString();
-      document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
-  },
-  getCookie: function (cname) {
-      let name = cname + "=";
-      let decodedCookie = decodeURIComponent(document.cookie);
-      let ca = decodedCookie.split(';');
-      for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-              c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-              return c.substring(name.length, c.length);
-          }
-      }
-      return "";
-  },
-  deleteCookie: function (name) {
-      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
-  }
+function setCookie(name, value) {
+  const d = new Date();
+  d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
+  let expiry = d.toUTCString();
+  document.cookie = `${name}=${value}; expires=${expiry}; path=${path}`
 };
 //Utility Functions
 const random = {
@@ -57,12 +37,31 @@ const random = {
   }
 };
 //Start a new Wordle
-let currentWord = random.object(words);
-let currentWordArray = currentWord.split("");
+// let currentWord = random.object(words);
+// let currentWordArray = currentWord.split("");
 //Regenerate Wordle
 const generateNewWord = () => {
-  currentWord = random.object(words);
-  currentWordArray = currentWord.split("");
+  try {
+    currentWord = () => {
+      let name = "word=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      throw '';
+    };
+  } catch (e) {
+    currentWord = random.object(words);
+    currentWordArray = currentWord.split("");
+  };
+  document.cookie = `word=${currentWord}`;
   currentInput = [];
   currentLine = 1;
   won = false;
@@ -97,6 +96,7 @@ const generateNewWord = () => {
     box5.classList.remove("boxYellow");
   };
 };
+generateNewWord();
 //Current input
 let currentInput = [];
 //Detect Input
