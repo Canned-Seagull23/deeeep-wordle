@@ -42,7 +42,7 @@ const random = {
 //Regenerate Wordle
 const generateNewWord = () => {
   try {
-    currentWord = () => {
+    currentWord = (() => {
       let name = "word=";
       let decodedCookie = decodeURIComponent(document.cookie);
       let ca = decodedCookie.split(';');
@@ -56,7 +56,7 @@ const generateNewWord = () => {
           }
       }
       throw '';
-    };
+    })();
   } catch (e) {
     currentWord = random.object(words);
     currentWordArray = currentWord.split("");
