@@ -19,8 +19,6 @@ const words = ["depth",
                "score",
                "skins"
                ];
-let currentLine = 1;
-let won = false;
 function setCookie(name, value) {
   const d = new Date();
   d.setTime(d.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
@@ -44,7 +42,7 @@ let won = false;
 //Regenerate Wordle
 const generateNewWord = () => {
   try {
-    let currentWord = (() => {
+    currentWord = (() => {
       let name = "word=";
       let decodedCookie = decodeURIComponent(document.cookie);
       let ca = decodedCookie.split(';');
