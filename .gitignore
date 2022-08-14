@@ -1,4 +1,5 @@
-**/.ts
+**/*.ts
 node_modules
 package.json
 package_lock.json
+tsconfig.json
