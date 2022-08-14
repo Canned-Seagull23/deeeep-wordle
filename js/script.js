@@ -204,7 +204,7 @@ function checkAnswers(currentLine) {
       let box4 = document.getElementById(currentLine + "_4").innerHTML.toLowerCase();
       let box5 = document.getElementById(currentLine + "_5").innerHTML.toLowerCase();
       if(box1 === currentWordArray[0] && box2 === currentWordArray[1] && box3 === currentWordArray[2] && box4 === currentWordArray[3] && box5 === currentWordArray[4]) {
-        alert("Correct!");
+        setTimeout(() => alert("Correct!"), 100);
         won = true;
       };
     };
